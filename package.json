@@ -1,0 +1,25 @@
+{
+  "name": "claude-bell",
+  "version": "1.0.0",
+  "description": "Interactive CLI to configure audio notifications for Claude Code",
+  "type": "commonjs",
+  "bin": {
+    "claude-bell": "bin/claude-notify.js"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "play-sound": "^1.1.5",
+    "prompts": "^2.4.2"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "notification",
+    "audio",
+    "cli"
+  ],
+  "license": "MIT"
+}
