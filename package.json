@@ -1,6 +1,6 @@
 {
   "name": "claude-bell",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Interactive CLI to configure audio notifications for Claude Code",
   "type": "commonjs",
   "bin": {
