@@ -36,7 +36,7 @@ function writeNotifySh() {
 }
 
 function buildHooks(completeSound, promptSound) {
-  const cmd = (soundPath) => `${NOTIFY_SH} ${soundPath}`;
+  const cmd = (soundPath) => `${NOTIFY_SH} "${soundPath}"`;
 
   return {
     Stop: [
@@ -55,6 +55,12 @@ function buildHooks(completeSound, promptSound) {
       },
       {
         matcher: 'permission_prompt',
+        hooks: [
+          { type: 'command', command: cmd(promptSound) }
+        ]
+      },
+      {
+        matcher: 'elicitation_dialog',
         hooks: [
           { type: 'command', command: cmd(promptSound) }
         ]

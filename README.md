@@ -1,5 +1,11 @@
 # claude-bell
 
+[![npm version](https://img.shields.io/npm/v/claude-bell)](https://www.npmjs.com/package/claude-bell)
+[![npm downloads](https://img.shields.io/npm/dm/claude-bell)](https://www.npmjs.com/package/claude-bell)
+[![GitHub stars](https://img.shields.io/github/stars/KenWuqianghao/claude-bell)](https://github.com/KenWuqianghao/claude-bell/stargazers)
+[![GitHub license](https://img.shields.io/github/license/KenWuqianghao/claude-bell)](https://github.com/KenWuqianghao/claude-bell/blob/master/LICENSE)
+[![Node.js](https://img.shields.io/node/v/claude-bell)](https://nodejs.org)
+
 Interactive CLI to configure audio notifications for [Claude Code](https://claude.ai/code).
 
 Pick sounds for two events with a real-time audio preview as you navigate — hear each sound the moment your cursor lands on it.
