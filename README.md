@@ -82,15 +82,16 @@ Select **Browse local file...** in the picker to use any MP3 or WAV file on your
 
 `notify.sh` tries the following players in order, using whichever is available:
 
-| Player | Platform |
-|---|---|
-| `ffplay` (ffmpeg) | Linux & macOS |
-| `afplay` | macOS built-in |
-| `paplay` | Linux (PulseAudio) |
-| `aplay` | Linux (ALSA) |
-| terminal bell | fallback |
+| Player | Platform | Formats |
+|---|---|---|
+| `ffplay` (ffmpeg) | Linux & macOS | MP3, WAV, and more |
+| `afplay` | macOS built-in | MP3, WAV, and more |
+| `mpv` | Linux & macOS | MP3, WAV, and more |
+| `paplay` | Linux (PulseAudio) | WAV only |
+| `aplay` | Linux (ALSA) | WAV only |
+| terminal bell | fallback | n/a |
 
-No extra dependencies required on macOS. On Linux, PulseAudio (`paplay`) is typically available by default. Install `ffmpeg` for the broadest format support.
+No extra dependencies required on macOS. On Linux, install `ffmpeg` or `mpv` for MP3 support. `paplay` and `aplay` are used only for WAV files to avoid distortion.
 
 ## Requirements
 
