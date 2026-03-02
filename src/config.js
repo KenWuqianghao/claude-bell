@@ -11,17 +11,23 @@ const SETTINGS_JSON = path.join(CLAUDE_DIR, 'settings.json');
 const NOTIFY_SH_CONTENT = `#!/usr/bin/env bash
 FILE="$1"
 [ -z "$FILE" ] || [ ! -f "$FILE" ] && exit 0
+EXT="\${FILE##*.}"
 if command -v ffplay >/dev/null 2>&1; then
   ffplay -nodisp -autoexit -loglevel quiet "$FILE" 2>/dev/null && exit 0
 fi
 if command -v afplay >/dev/null 2>&1; then
   afplay "$FILE" 2>/dev/null && exit 0
 fi
-if command -v paplay >/dev/null 2>&1; then
-  paplay "$FILE" 2>/dev/null && exit 0
+if command -v mpv >/dev/null 2>&1; then
+  mpv --no-video --really-quiet "$FILE" 2>/dev/null && exit 0
 fi
-if command -v aplay >/dev/null 2>&1; then
-  aplay -q "$FILE" 2>/dev/null && exit 0
+if [ "$EXT" = "wav" ] || [ "$EXT" = "WAV" ]; then
+  if command -v paplay >/dev/null 2>&1; then
+    paplay "$FILE" 2>/dev/null && exit 0
+  fi
+  if command -v aplay >/dev/null 2>&1; then
+    aplay -q "$FILE" 2>/dev/null && exit 0
+  fi
 fi
 printf '\\a'
 exit 0
